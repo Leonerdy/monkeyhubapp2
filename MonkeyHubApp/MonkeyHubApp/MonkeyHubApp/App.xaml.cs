@@ -8,7 +8,7 @@ namespace MonkeyHubApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage())
+            MainPage = new NavigationPage(new Teste())
             {
                 BarBackgroundColor = Color.FromRgb(0, 167, 243),
                 BarTextColor = Color.White

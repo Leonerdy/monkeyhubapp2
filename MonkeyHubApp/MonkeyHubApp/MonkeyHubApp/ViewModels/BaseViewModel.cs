@@ -19,6 +19,30 @@ namespace MonkeyHubApp.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set
+            {
+                if (SetProperty(ref isBusy, value))
+                    IsNotBusy = !isBusy;
+            }
+        }
+
+        bool isNotBusy = true;
+
+        public bool IsNotBusy
+        {
+            get { return IsNotBusy; }
+            set
+            {
+                if (SetProperty(ref isNotBusy, value))
+                    IsBusy = !isNotBusy;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
